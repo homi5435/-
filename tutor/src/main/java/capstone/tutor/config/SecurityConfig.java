@@ -37,7 +37,7 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
         );
         http.exceptionHandling(exception -> exception
-                .authenticationEntryPoint());
+                .authenticationEntryPoint(new CustomAuthenticationEntryPoint()));
         return http.build();
     }
     @Bean
