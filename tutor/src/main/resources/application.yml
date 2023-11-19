@@ -1,25 +1,25 @@
 ####################################
-# ?? ? ???? ?? ??
+# 포트 및 프로젝트 명칭 설정
 ####################################
 server:
-  port: 80                    # ?? ??
+  port: 80                    # 포트 설정
 
 spring:
   application:
-    name: springboot-shop     # ????? ??
+    name: capstoneproject-tutor     # 프로젝트 명 설정
 
   devtools:
     livereload:
-      enabled: true           # ?? ??? ??
+      enabled: true           # 자동 리로드 설정
     restart:
-      enabled: true           # ?? ??? ??
-      preserve-session: true  # ?? ?? ??
+      enabled: true           # 자동 재실행 설정
+      preserve-session: true  # 세션 유지 설정
 
   thymeleaf:
-    cache: false              # ?? ??
+    cache: false              # 캐쉬 없음
 
   ####################################
-  # ?????? ??
+  # 데이터 베이스 설정
   ####################################
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -28,19 +28,19 @@ spring:
     password: 1234
 
   ####################################
-  # JPA ??
+  # JPA 설정
   ####################################
   jpa:
     #open-in-view: true      #
     hibernate:
       ddl-auto: update      # create, update, ...
       naming:
-        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy # ????? ???? ??? ??
-    show-sql: true          # SQL ?? ???
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy # 카멜표기를 스네이크 표기로 변환
+    show-sql: true          # SQL 구문 보이기
     properties:
       hibernate:
-        format_sql: true    # ?? ???? ???
-    database-platform: org.hibernate.dialect.MySQL8Dialect  # MySQL8 ?? ??
+        format_sql: true    # 포멧 처리해서 보이기
+    database-platform: org.hibernate.dialect.MySQL8Dialect  # MySQL8 버전 사용
 
   ####################################
   # Security User
@@ -52,11 +52,22 @@ spring:
 
   servlet:
     multipart:
-      max-file-size: 20MB         # ?? ??? ?? ??
-      max-request-size: 20MB      # ?? ??? ?? ??
+      max-file-size: 20MB         # 파일 업로드 최대 크기
+      max-request-size: 20MB      # 파일 업로드 최대 크기
 
 ####################################
-# ?? ??? ??
+# 파일 업로드 설정
 ####################################
-itemImgLocation: D:/shop/item/    # ?? ??? ?? ??
-uploadPath: file:///D:/shop/      # ?? ??? ??? ??
+itemImgLocation: C:/shop/item/    # 회원 이미지 저장 위치
+uploadPath: file:///D:/shop/      # 회원 이미지 업로드 위치
+
+####################################
+# 로그 정보 설정
+####################################
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace  # 물음표에 바인드 파라미터 출력
