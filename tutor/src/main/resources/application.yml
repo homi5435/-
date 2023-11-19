@@ -1,0 +1,62 @@
+####################################
+# ?? ? ???? ?? ??
+####################################
+server:
+  port: 80                    # ?? ??
+
+spring:
+  application:
+    name: springboot-shop     # ????? ??
+
+  devtools:
+    livereload:
+      enabled: true           # ?? ??? ??
+    restart:
+      enabled: true           # ?? ??? ??
+      preserve-session: true  # ?? ?? ??
+
+  thymeleaf:
+    cache: false              # ?? ??
+
+  ####################################
+  # ?????? ??
+  ####################################
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tutor?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: 1234
+
+  ####################################
+  # JPA ??
+  ####################################
+  jpa:
+    #open-in-view: true      #
+    hibernate:
+      ddl-auto: update      # create, update, ...
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy # ????? ???? ??? ??
+    show-sql: true          # SQL ?? ???
+    properties:
+      hibernate:
+        format_sql: true    # ?? ???? ???
+    database-platform: org.hibernate.dialect.MySQL8Dialect  # MySQL8 ?? ??
+
+  ####################################
+  # Security User
+  ####################################
+  security:
+    user:
+      name: test@test.com
+      password: 1111
+
+  servlet:
+    multipart:
+      max-file-size: 20MB         # ?? ??? ?? ??
+      max-request-size: 20MB      # ?? ??? ?? ??
+
+####################################
+# ?? ??? ??
+####################################
+itemImgLocation: D:/shop/item/    # ?? ??? ?? ??
+uploadPath: file:///D:/shop/      # ?? ??? ??? ??
