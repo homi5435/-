@@ -58,8 +58,8 @@ spring:
 ####################################
 # 파일 업로드 설정
 ####################################
-itemImgLocation: C:/shop/item/    # 회원 이미지 저장 위치
-uploadPath: file:///D:/shop/      # 회원 이미지 업로드 위치
+itemImgLocation: C:/member/image/    # 회원 이미지 저장 위치
+uploadPath: file:///D:/springWS/      # 회원 이미지 업로드 위치
 
 ####################################
 # 로그 정보 설정
